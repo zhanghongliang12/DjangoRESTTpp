@@ -108,3 +108,18 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#设置
+ADMIN_USER_TIMOUT = 60*60*24*7
+
+#配置redis
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/1",
+        "OPTIONS": {
+            "CLIENT_CLASS":"django_redis.client.DefaultClient",
+        "PASSWORD":'zhang',
+        }
+    }
+}
